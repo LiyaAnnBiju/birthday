@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday 🤍</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Georgia, serif;
+  background-image: url("https://images.unsplash.com/photo-1513151233558-d860c5398176");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.overlay {
+  background: rgba(255, 255, 255, 0.85);
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  display: none;
+  text-align: center;
+  padding: 60px 20px;
+  box-sizing: border-box;
+}
+
+.overlay.active {
+  display: block;
+}
+
+p {
+  max-width: 750px;
+  margin: auto;
+  line-height: 1.9;
+  font-size: 18px;
+  white-space: pre-line;
+  color: #4a2c40;
+}
+
+button {
+  margin-top: 40px;
+  padding: 14px 30px;
+  border-radius: 30px;
+  border: none;
+  background-color: #ff9ecf;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ff7ebd;
+}
+
+.candle {
+  font-size: 100px;
+  margin-top: 80px;
+  cursor: pointer;
+}
+
+.photo {
+  width: 280px;        /* Fixed width */
+  height: 350px;       /* Fixed height */
+  object-fit: cover;   /* Crops evenly */
+  margin: 20px;
+  border-radius: 18px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div class="overlay active" id="page1">
+<p>Before you step into another year of your life…
+take a quiet moment.</p>
+
+<button onclick="nextPage(2)">Unwrap</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="overlay" id="page2">
+<p>Every year begins the same way.
+With a quiet wish.</p>
+
+<div class="candle" onclick="blowCandle()" id="candle">🕯️</div>
+
+<p id="tapText">Make it count.
+
+Tap the candle.</p>
+
+<button id="continueBtn" style="display:none;" onclick="nextPage(3)">Continue</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="overlay" id="page3">
+<p>
+<span style="font-weight:bold;">
+Happy Birthday.
+</span>
+
+Today is not about distance.
+Not about time zones.
+Not about how many years have passed.
+
+Today is simply about you.
+
+About the courage it takes to step into unfamiliar spaces and still stand steady.
+Another year older — but more importantly, another year braver.
+
+Over the years, so many things have changed — schools, cities, countries, responsibilities.
+
+But through all of it, you have been the one constant while everything else shifted.
+
+Distance changed our location.
+It never changed our equation.
+
+I admire the way you handle change with quiet determination.
+The way you show up for the people you care about.
+The way you continue growing without losing who you are.
+
+I hope this year feels lighter.
+I hope you trust your own strength more.
+And I hope you achieve things that once felt slightly out of reach.
+
+You deserve a year that matches your effort.
+
+Happy Birthday.
+To growth.
+To courage.
+To you.
+</p>
+
+<button onclick="nextPage(4)">One more thing</button>
+</div>
+
+<!-- PAGE 4 -->
+<div class="overlay" id="page4">
+
+<img src="photo1.jpg" class="photo">
+<img src="photo2.jpg" class="photo">
+<img src="photo3.jpg" class="photo">
+<img src="photo4.jpg" class="photo">
+<p>
+Through every version of life, this remained.
+Different maps. Same meaning.
+Still here. Always.
+</p>
+
+<button onclick="nextPage(5)">One last page</button>
+</div>
+
+<!-- PAGE 5 -->
+<div class="overlay" id="page5">
+<p>
+<span style="font-weight:bold;">
+One thing I want you to know.
+</span>
+You once did something for me that meant more than you probably realised.
+
+It wasn’t just the gesture.
+It was the thought.
+The effort.
+The intention behind it.
+
+I’ve carried that with me ever since.
+
+Thank you — for showing up the way you do.
+For being steady.
+For being you.
+
+Keep building.
+Keep believing.
+Keep becoming.
+
+No matter the country.
+No matter the time zone.
+
+I’m always in your corner.
+
+Happy Birthday 🤍
+
+May this year meet you with the same care you give to others.
+</p>
+
+<p style="margin-top:5px; font-style: italic;">
+<img src="finalphoto.jpg" class="photo">
+<span style="font-size:26px; font-weight:bold;">
+Some constants are rare. I’m grateful ours is one of them.
+</span>
+</p>
+</div>
+
+<script>
+function nextPage(num) {
+  var pages = document.getElementsByClassName("overlay");
+  for (var i = 0; i < pages.length; i++) {
+    pages[i].classList.remove("active");
+  }
+  document.getElementById("page" + num).classList.add("active");
+}
+
+function blowCandle() {
+  document.getElementById("candle").innerHTML = "🕯";
+  document.getElementById("tapText").innerText =
+  "Whatever you wished for —\nmay you have the strength to build it.";
+  document.getElementById("continueBtn").style.display = "inline-block";
+}
+</script>
+
+</body>
+</html>
